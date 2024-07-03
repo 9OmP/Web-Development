@@ -101,7 +101,6 @@ describe('API Endpoints', () => {
 });
 
 
-
 function sendRequest(options, requestBody) {
   return new Promise((resolve, reject) => {
     const req = http.request(

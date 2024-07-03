@@ -16,6 +16,56 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const port = 3000;
+const filesPath  = 'assignments\\week-2\\02-nodejs\\files'
 
+let content = [];
+app.get('/', function(req, res){
+  res.send();
+})
+
+let readDirError = false;
+
+fs.readdir(filesPath, 'utf-8', function(err, files){
+  if (err) {
+    console.error('Error reading directory:', err);
+    readDirError = true;
+  } 
+  else if (files.length > 0){
+    files.forEach(file => {
+      content.push(file);
+    });
+    readDirError = false;
+  }
+})
+
+app.get('/files', function(req, res){
+  if (readDirError = true){
+    return res.status(500).send('Internal Server Error');
+  }
+  res.status(200).send(content);
+});
+
+let text = '';
+app.get('/file/:file_name', function(req, res){
+  let fileName = req.params.file_name;
+  let final_path = path.join(filesPath, fileName);
+  fs.readFile(final_path,'utf-8', function(err, data){
+    if (err){
+      res.status(404).send('File not found');
+    }else{
+      text = data;
+      res.send(text);
+    }
+  });
+})
+
+// Handle undefined routes
+app.use((req, res) => {
+  res.status(404).send('Route not found');
+});
+
+
+// app.listen(port);
 
 module.exports = app;
