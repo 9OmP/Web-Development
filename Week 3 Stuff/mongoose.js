@@ -2,10 +2,10 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const jwtPassword = "123456";
+const dotenv = require('dotenv');
+dotenv.config();
 
-mongoose.connect(
-  "mongodb+srv://admin:%3Cdb_password%3E@cluster0.vkg6k.mongodb.net/",
-);
+mongoose.connect(process.env.MONGODB_URI);
 
 const User = mongoose.model("User", {
   name: String,

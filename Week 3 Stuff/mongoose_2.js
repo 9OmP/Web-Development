@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
+const dotenv = require('dotenv');
+dotenv.config();
 
-
-mongoose.connect('mongodb+srv://admin:1234@cluster0.vkg6k.mongodb.net/');
+mongoose.connect(process.env.MONGODB_URI);
 
 const User = mongoose.model("User", {
     name: String,
