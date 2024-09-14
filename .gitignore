@@ -1,4 +1,5 @@
 node_modules/
 **/.coveralls.yml
-
+.replace-text.txt
 Week 3 Stuff/.env
+bfg-1.14.0.jar
