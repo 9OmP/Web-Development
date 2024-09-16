@@ -1,15 +1,16 @@
-## Create a course selling website
+# Create a course selling website
 
-### Description
+## Description
 
 Same as the last assignment but you need to use jwts for authentication.
 We have introduced the signgin endpoints for both users and admins.
-For this one, in every authenticated requests, you need to send the jwt in headers (Authorization : "Bearer <actual token>").
+For this one, in every authenticated requests, you need to send the jwt in headers
+(Authorization : "Bearer [actual token]").
 You need to use mongodb to store all the data persistently.
 
 ## Routes
 
-### Admin Routes:
+### Admin Routes
 
 - POST /admin/signup
   Description: Creates a new admin account.
@@ -21,7 +22,7 @@ You need to use mongodb to store all the data persistently.
   Output: { token: 'your-token' }
 - POST /admin/courses
   Description: Creates a new course.
-  Input: Headers: { 'Authorization': 'Bearer <your-token>' }, Body: { title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com' }
+  Input: Headers: { 'Authorization': 'Bearer <your-token>' }, Body: { title: 'course title', description: 'course description', price: 100, imageLink: '<https://linktoimage.com>' }
   Output: { message: 'Course created successfully', courseId: "new course id" }
 - GET /admin/courses
   Description: Returns all the courses.
