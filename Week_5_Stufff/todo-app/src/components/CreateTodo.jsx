@@ -10,16 +10,19 @@ export function CreateTodo() {
         <h2 style={{
             margin: 10
             }}>Create Todo</h2>
+
         <input style={{
             padding: 7,
         }} type="text" placeholder="title" id="title" onChange={(e)=>{
             setTite(e.target.value);
         }}/> <br /><br />
+
         <input style={{
             padding: 7,  
         }}  type="text" placeholder="description" id="des" onChange={(e)=>{
             setTite(e.target.value);
         }}/> <br /><br />
+
         <button style={{
             padding: 9,
             borderRadius: 12.5,
@@ -39,6 +42,7 @@ export function CreateTodo() {
                     alert("Todo added");
                 })
         }}>Add to do</button>
+        
       </div>
     );
   }
