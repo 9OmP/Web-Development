@@ -1,3 +1,4 @@
 node_modules/
 **/.coveralls.yml
 .env
+assignments/week-10/1-postgres-simple/src/config.ts

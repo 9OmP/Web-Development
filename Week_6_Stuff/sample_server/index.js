@@ -4,17 +4,12 @@ const cors = require('cors')
 app.use(cors());
 
 app.get('/todos', (req, res) => {
-  const id = req.query.id;
-  if (!id) {
-    res.status(400).send({ error: 'id parameter is required' });
-    return;
-  }
-
-  const response = {
-    id,
-    title: `Title number_${id}`,
-    description: `Description number_${id}`
-  };
+  const randomNumber = Math.floor(Math.random() * 6) + 1; // generate random number between 1 and 6
+  const response = Array.from({ length: randomNumber }, (_, i) => ({
+    id: i + 1,
+    title: `title${i + 1}`,
+    description: `des${i + 1}`
+  }));
 
   res.json(response);
 });

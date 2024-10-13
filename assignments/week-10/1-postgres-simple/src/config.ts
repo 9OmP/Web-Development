@@ -1,2 +1,1 @@
-
-export const DB_URL = "postgres://postgres:mysecretpassword@localhost/postgres";
+export const DB_URL = "postgresql://neondb_owner:CUwQPby05IHc@ep-icy-paper-a13i99sa.ap-southeast-1.aws.neon.tech/neondb?sslmode=require";

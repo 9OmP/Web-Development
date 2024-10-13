@@ -23,8 +23,8 @@ export async function createTables() {
 }
 
 export async function dropTables() {
-    await client.query(`DROP TABLE IF EXISTS todos;`);
-    await client.query(`DROP TABLE IF EXISTS users;`);
+    await client.query(`DROP TABLE IF EXISTS todos CASCADE;`);
+    await client.query(`DROP TABLE IF EXISTS users CASCADE;`);
 }
 
 module.exports = { createTables, dropTables };
