@@ -5,6 +5,7 @@
     "context": "^3.0.31",
     "cors": "^2.8.5",
     "express": "^4.21.0",
+    "hono": "^4.6.4",
     "node": "^20.15.0",
     "react-router-dom": "^6.26.2",
     "recoil": "^0.7.7"
