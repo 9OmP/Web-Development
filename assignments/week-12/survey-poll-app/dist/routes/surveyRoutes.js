@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const surveyController_1 = require("../controllers/surveyController");
+const router = (0, express_1.Router)();
+router.get('/surveys', surveyController_1.getAllSurveys);
+router.get('/surveys/:id', surveyController_1.getSurveyById);
+router.post('/surveys', surveyController_1.createSurvey);
+router.put('/surveys/:id', surveyController_1.updateSurvey);
+router.delete('/surveys/:id', surveyController_1.deleteSurvey);
+exports.default = router;
